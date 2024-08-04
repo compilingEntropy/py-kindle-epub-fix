@@ -11,7 +11,6 @@ from pprint import pprint
 
 parser = argparse.ArgumentParser(description='This tool will try to fix your EPUB by adding the UTF-8 specification to your EPUB.')
 
-# parser.add_argument('-q', '--quality', type=int, choices=[1, 2, 3, 4, 5], help='A value between [1..5], with higher numbers being better output quality.')
 parser.add_argument('infile', help='Path of the epub')
 parser.add_argument('outfile', help='Output path for the fixed epub file')
 # either in-place or outfile, or output directory

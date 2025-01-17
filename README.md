@@ -26,3 +26,18 @@ I don't know when or if I will make those changes. For now, I'm committing this 
 
 **Warning:** This tool come at no warranty. Please still keep your original EPUB.
 There is no guarantee the resulting file will be valid EPUB file, but it should be.
+
+# EPUB Builder
+
+An additional utility has been included which builds an epub file out of a directory of files. This can be a bit tricky to do using conventional tools such as 7z because the `mimetype` file needs to be both uncompressed and positioned first in the zip's index.
+
+The tool is useful in the following workflow:
+- Unpack an epub
+`7z x './Wind and Truth.epub' -o./epub_extracted/`
+- Modify the ebook files inside `./epub_extracted/` as desired
+- Repack epub
+`./pack_epub.py ./epub_extracted/ './Wind and Truth (modified).epub'`
+- Clean up
+`rm -rf ./epub_extracted/`
+
+Note that running [epubcheck](https://github.com/w3c/epubcheck) on your resulting book is recommended whenever modifying books in this way.
